@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
 import {User} from "../models/user.model.js";
 import {catchAsyncError} from "./catchAsyncError.middleware.js";
 export const isAuthenticated=catchAsyncError(async(req,res,next)=>{
@@ -21,3 +21,4 @@ req.user=user;
 next();
 
 });
+
