@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken"
 import {User} from "../models/user.model.js";
 import {catchAsyncError} from "./catchAsyncError.middleware.js";
 export const isAuthenticated=catchAsyncError(async(req,res,next)=>{
@@ -19,4 +19,5 @@ if(!decoded){
 const user=await User.findById(decoded.id);
 req.user=user;
 next();
+
 });
